@@ -92,11 +92,13 @@ tuple = (1,2,3,4,5,6)
 #elif
 # < > <= >= == !=(not ==) or and
 
-if 'age' not in dog:
-    print("Dog doesn't have an age")
-elif dog['age'] > 4:
-    print('Dog is older than 4')
-else:
-    print('dog is less than 4')
+# if 'age' not in dog:
+#     print("Dog doesn't have an age")
+# elif dog['age'] > 4:
+#     print('Dog is older than 4')
+# else:
+#     print('dog is less than 4')
+
+
 
 
