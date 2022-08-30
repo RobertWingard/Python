@@ -11,9 +11,9 @@ second black: sequence to iterate over
 
 """
 for i in range(50,-1,-1):
-    if i ==10:
+    if i == 10:
         continue
-    if i ==8:
+    if i == 8:
         break
     print(i)
 # range (start,stop,step)    

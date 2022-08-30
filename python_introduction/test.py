@@ -100,5 +100,3 @@ tuple = (1,2,3,4,5,6)
 #     print('dog is less than 4')
 
 
-
-
