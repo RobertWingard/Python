@@ -24,8 +24,8 @@ for i in range(50,-1,-1):
 fruits = ['mango', 'banana', 'pears', 'lychee', 'dragon fruit', 'tomato']
 
 
-# for each_fruit in fruits:
-#     print(each_fruit)  #without indices
+for fruit in fruits:
+    print(fruit)  #without indices
 
 
 # for i in range(len(fruits)):
