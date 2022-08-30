@@ -13,8 +13,9 @@ class User():
         print(f'age: {self.age}')
         print(f'Member: {self.is_reward_member}')
         print(f'Points: {self.gold_card_points}')
+        return self
         
-    def enroll(self):
+    def enroll(self):        
         if self.is_reward_member:
             print('User already a member.')
             return False
@@ -38,12 +39,11 @@ user2 = User('Stacy', 'Boots', "email.com", 33)
 user3 = User('Mario', 'Brother', 'plumber@gmail.com', 53)
 # user1.display_info()
 user1.enroll()
-user1.display_info()
-user1.spend_points(50)
+user1.display_info().spend_points(50)
+# user1.spend_points(50)
 user1.display_info()
 user2.enroll()
-user2.display_info()
-user2.spend_points(80)
+user2.display_info().spend_points(80)
 user2.display_info()
 user1.enroll()
 user3.spend_points(200)
