@@ -10,12 +10,12 @@ second black: sequence to iterate over
 
 
 """
-for i in range(50,-1,-1):
-    if i == 10:
-        continue
-    if i == 8:
-        break
-    print(i)
+# for i in range(50,-1,-1):
+#     if i == 10:
+#         continue
+#     if i == 8:
+#         break
+#     print(i)
 # range (start,stop,step)    
 # the start is inclusive and defaulted to 0
 #stop is exclusive
@@ -25,11 +25,11 @@ fruits = ['mango', 'banana', 'pears', 'lychee', 'dragon fruit', 'tomato']
 
 
 for fruit in fruits:
-    print(fruit)  #without indices
+    print(fruit)  #without indices, will print each item of the list on a new line
 
 
-# for i in range(len(fruits)):
-#     print(f"{i}): {fruits[i]}" )  #with indecies
+for i in range(len(fruits)):
+    print(f"{i}): {fruits[i]}" )  #with indecies, len will add the indecies to each new line
 
 # for i in range(len(fruits)-1,-1,-1):
 #     print(f"{i}): {fruits[i]}" )
@@ -64,8 +64,8 @@ dog_list = [
     }
 ]
 
-# for dog in dog_list:
-#     print(dog)
+for dog in dog_list:
+    print(dog)
 #WHILE
 #ctrl + c will stop terminal
 # i = 0 
