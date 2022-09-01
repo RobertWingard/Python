@@ -101,36 +101,49 @@
 
 
 
-peeps = [
-{'first_names': ['john', 'robert', 'nick', 'rachel', 'tony']},
-{'last_names': ['alexander', 'wingard', 'graeff', 'ayuste', 'fong']}
-]
+# peeps = [
+# {'first_names': ['john', 'robert', 'nick', 'rachel', 'tony']},
+# {'last_names': ['alexander', 'wingard', 'graeff', 'ayuste', 'fong']}
+# ]
 
-# print(peeps[0]['first_names'][0])
-# print(peeps[0]['first_names'][1])
-# print(peeps[0]['first_names'][2])
-# print(peeps[0]['first_names'][3])
-# print(peeps[0]['first_names'][4])
-def print_string_on_dif_line(asdf):
-    for i in range(len(asdf)):
-        print(asdf[i])
-def print_first_names(i):
-    print_string_on_dif_line(peeps[0]['first_names'][i])
-def print_last_names(i):
-    print_string_on_dif_line(peeps[1]['last_names'][i])
+# # print(peeps[0]['first_names'][0])
+# # print(peeps[0]['first_names'][1])
+# # print(peeps[0]['first_names'][2])
+# # print(peeps[0]['first_names'][3])
+# # print(peeps[0]['first_names'][4])
+# def print_string_on_dif_line(asdf):
+#     for i in range(len(asdf)):
+#         print(asdf[i])
+# def print_first_names(i):
+#     print_string_on_dif_line(peeps[0]['first_names'][i])
+# def print_last_names(i):
+#     print_string_on_dif_line(peeps[1]['last_names'][i])
 
 
-for i in range(len(peeps[0]['first_names'])):
-    print_first_names(i)
-    print()
-    print_last_names(i)
-    print()
+# for i in range(len(peeps[0]['first_names'])):
+#     print_first_names(i)
+#     print()
+#     print_last_names(i)
+#     print()
 
-asdf = "hello"
-# print(asdf[0])
+# asdf = "hello"
+# # print(asdf[0])
 # print(asdf[1])
 # print(asdf[2])
 # print(asdf[3])
 # print(asdf[4])
 
 # print the first name on a seperate line / last name doing same thing / space after each one
+
+
+class Parent:
+    def method_a(self):
+        print("invoking PARENT method_a!")
+class Child(Parent):
+    def method_a(self):
+        print("invoking CHILD method_a!")
+dad = Parent()
+son = Child()
+dad.method_a()
+son.method_a() #notice this overrides the Parent method!
+
