@@ -9,8 +9,9 @@ def index():
 def play():
     return render_template('index.html', h=100, w=100, color='blue')
 
+@app.route('/play/<int:number>')
 @app.route('/play/<int:number>/<color>')
-def multi(number, color):
+def multi(number, color='blue'):
     return render_template('index.html', color=color, number=number) 
 
 
