@@ -19,7 +19,7 @@ class Character:
 
     def defend(self, damage):
         actual_damage=random.randint(3,damage)-self.defense
-        self.health-=actual_damage
+        self.health-=max(0,actual_damage)
         return self
 
     def healing(self):

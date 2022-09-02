@@ -4,9 +4,7 @@ from classes.barbarian import Barbarian
 from classes.ninja import Ninja
 import random
 
-player1 = Character()
 
-player2 = Character()
 
 player1ready=False
 player2ready=False
@@ -27,7 +25,7 @@ while(player1ready==False):
 
 
 player1.show_stats()
-player2.show_stats()
+
 
 while(player2ready==False):
     response = input('Player 2, please decide a class:\n 1) Pirate \n 2) Barbarian\n 3) Ninja\n')
@@ -44,7 +42,7 @@ while(player2ready==False):
         while(response != '1' and response != '2'):
             response = input('Player 2, please decide a class:\n 1) Pirate \n 2) Barbarian\n 3) Ninja\n')
 
-
+player2.show_stats()
 
 while(player1.health >0 and player2.health >0):
     response = input(f"Player 1: {player1.name}, will you attack or recuperate, or use your special? \n 1) attack \n 2) recuperate \n 3) {player1.special_name}\n" )
