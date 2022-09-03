@@ -12,14 +12,16 @@
         background-color: rgb(51,57,62);
         width: 450px;
         border: 3px solid black;
+        margin-top: 100px;
+        padding: 35px
         
         
     }
 </style>
 <body>
-    <form class="container" style="padding:35px" style="margin-top:50px" action="/result" method='POST'>
+    <form class="container" action="/result" method='POST'>
         <div class="text-center" style="color:white">
-    <h1>Dojo Survey</h1>
+    <h1 style="color:lightseagreen">Dojo Survey</h1>
         <div>
             <label for="">Name:</label>
         </div>
@@ -30,31 +32,33 @@
         <label for="">Dojo Location:</label>
     </div>
 <div>
-    <select name="" id="" style="width:180px">
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
+    <select name="location" id="" style="width:180px">
+        <option value="Choose">--Choose within--</option>
+        <option value="Las Vegas">Las Vegas</option>
+        <option value="LA">LA</option>
+        <option value="Texas">Texas</option>
+        <option value="New York">New York</option>
     </select>
 </div>
 <div>
     <label for="">Favorite Language:</label>
 </div>
 <div>
-    <select name="" id="" style="width:180px">
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
+    <select name="language" id="" style="width:180px">
+        <option value="Choose within">--Choose within--</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="Chinese">Chinese</option>
+        <option value="English">English</option>
     </select>
 </div>
 <div>
     <label for="">Comments:</label>
 </div>
 <div>
-<textarea name="" id="" cols="30" rows="10"></textarea>
+<textarea name="comment" id="" cols="30" rows="10" placeholder="Please write something in me"></textarea>
 </div>
-<div><a href="/results" class="btn btn-secondary btn-lg btn-block">Submit</a></div>
+<div><input type="submit" value = 'Click me' style="background-color:greenyellow"></div>
         </div>
 
 

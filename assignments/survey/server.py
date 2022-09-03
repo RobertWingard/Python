@@ -1,6 +1,7 @@
 from flask import Flask, render_template,request,session,redirect
 
 app = Flask(__name__)
+app.secret_key = 'dearlord'
 
 
 @app.route('/')
@@ -11,8 +12,10 @@ def index():
 @app.route('/result',methods=['POST'])
 def results():
     session['name'] = request.form['name']
-    print(session['name'])
-    return redirect('results.html')
+    session['location'] = request.form['location']
+    session['language'] = request.form['language']
+    session['comment'] = request.form['comment']
+    return redirect('/results')
 
 @app.route('/results')
 def real_results():
