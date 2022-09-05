@@ -1,5 +1,5 @@
 app = Flask(__name__)
-app.secret_key = 'keep it secret, keep it safe' # set a secret key for security purposes
+app.secret_key = 'keep' # set a secret key for security purposes
 
 
 
@@ -8,6 +8,7 @@ opener MUST HAVE
 
 from flask import Flask, render_template,request,session,redirect
 app = Flask(__name__)
+app.secret_key = 'keep'
 @app.route('/')
 def index():
     return render_template("index.html")	# notice the 2 new named arguments!

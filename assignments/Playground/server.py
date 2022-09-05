@@ -7,7 +7,7 @@ def index():
 
 @app.route('/play')
 def play():
-    return render_template('index.html', h=100, w=100, color='blue')
+    return render_template('index.html', h=100, w=100, color='blue', number=3)
 
 @app.route('/play/<int:number>')
 @app.route('/play/<int:number>/<color>')
