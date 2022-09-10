@@ -9,6 +9,7 @@
 <body>
     <h1>Welcome</h1>
     <a href="/dogs/new">Add A Dog</a>
+    <a href="/awards">View all</a>
     <ul>
         {% for one_dog in all_dogs %}
         <li>{{one_dog.id}}) Name: <a href="/dogs/{{one_dog.id}}">{{one_dog.name}}</a> Breed: {{one_dog.breed}} Color: {{one_dog.color}} Age: {{one_dog.age}}
@@ -17,5 +18,6 @@
         </li>
         {%endfor%}
     </ul>
+    <a href="/awards/new">Give one of these dogs an award</a>
 </body>
 </html>

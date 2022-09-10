@@ -19,6 +19,14 @@
     <p>
         Age: {{one_dog.age}}
     </p>
-
+    <h3>Awards This Dog has won:</h3>
+    {% if one_dog.award_list[0].id == None %}
+    <p>Haven't won any yet :(</p>
+    {%else%}
+    {% for award in one_dog.award_list%}
+    <p>{{award.title}}</p>
+    {%endfor%}
+    {%endif%}
+    <a href="/">back</a>
 </body>
 </html>

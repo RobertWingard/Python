@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>Edit a Dog</h1>
+
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
     <form action="/dogs/{{this_dog.id}}/update" method="post">
         <p>Name</p>
         <input type="text" name="name" id="name" value="{{this_dog.name}}">
