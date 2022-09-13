@@ -34,11 +34,11 @@ class User:
     @staticmethod
     def validate(user_data):
         is_valid = True
-        if len(user_data['first_name']) < 1:
-            flash('First name required', 'reg')
+        if len(user_data['first_name']) < 2:
+            flash('First name required, please make at least 2 characters long ', 'reg')
             is_valid = False
-        if len(user_data['last_name']) < 1:
-            flash('Last name required', 'reg')
+        if len(user_data['last_name']) < 2:
+            flash('Last name required, please enter at least 2 characters.', 'reg')
             is_valid = False
         if len(user_data['email']) < 1:
             flash('Email required', 'reg')
@@ -55,7 +55,7 @@ class User:
                 flash('email already registered')
                 is_valid = False
         if len(user_data['password']) < 8:
-            flash('passowrd > 8 chars', 'reg')
+            flash('password must be at least 8 characters long.', 'reg')
             is_valid = False
         elif not user_data['password'] == user_data['confirm_pass']:
             flash('passes dont match', 'reg')
