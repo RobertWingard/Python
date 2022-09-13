@@ -51,7 +51,7 @@ class Party:
 
     @classmethod
     def get_by_id(cls,data):
-        query = "SELECT * FROM parties JOIN users on users.id=parties.user_id WHERE parties.id = %(id)s;"
+        query = "SELECT * FROM parties JOIN users on users.id = parties.user_id WHERE parties.id = %(id)s;"
         results = connectToMySQL(DATABASE).query_db(query, data)
         if len(results) <1:
             return False
@@ -79,11 +79,11 @@ class Party:
         if len(form_data['what']) < 1:
             flash('what required')
             is_valid = False
-        is_valid = True
+        
         if len(form_data['location']) < 1:
             flash('location required')
             is_valid = False
-        is_valid = True
+        
         if len(form_data['date']) < 1:
             flash('date required')
             is_valid = False

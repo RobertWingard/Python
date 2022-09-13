@@ -68,11 +68,11 @@ def update_party(id):
 
 @app.route('/parties/<int:id>')
 def show_party(id):
-    party = Party.get_by_id({'id':id})
+    party = Party.get_by_id({'id' : id})
     return render_template('parties_one.html', party=party)
 
 
 @app.route('/my_parties')
 def my_parties():
     user = User.get_by_id({'id': session['user_id']})
-    return render_template('my_parties.html', user=user)
+    return render_template('my_parties.html', logged_user=user)

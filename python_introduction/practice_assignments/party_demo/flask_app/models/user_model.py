@@ -36,21 +36,21 @@ class User:
         results = connectToMySQL(DATABASE).query_db(query,data)
         if len(results) < 1:
             return False
-    user = cls(results[0])
-    list_of_parties = []
-    for row in results:
-        if row['parties.id'] == None:
-            break
-        party_data = {
-            **row,
-            'id': row['parties.id'],
-            'created_at': row['parties.created_at'],
-            'updated_at': row['parties.updated_at']
-        }
-        this_party = party_model.Party(this_party)
-        list_of_parties.append(this_party)
-    user.parties = list_of_parties
-    return user
+        user = cls(results[0])
+        list_of_parties = []
+        for row in results:
+            if row['parties.id'] == None:
+                break
+            party_data = {
+                **row,
+                'id': row['parties.id'],
+                'created_at': row['parties.created_at'],
+                'updated_at': row['parties.updated_at']
+            }
+            this_party = party_model.Party(party_data)
+            list_of_parties.append(this_party)
+        user.parties = list_of_parties
+        return user
 
 
 

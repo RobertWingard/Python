@@ -38,7 +38,7 @@
                     <td>{{party.location}}</td>
                     <td>{{party.date}}</td>
                     <td>{% if party.all_ages == 1 %}True{%else%}False{%endif%}</td>
-                    <td>{{party.planner.first_name}}{{party.planner.last_name}}</td>
+                    <td>{{party.planner.first_name}} {{party.planner.last_name}}</td>
                     <td>
                         <a href="/parties/{{party.id}}">View</a>
                         {% if session['user_id'] == party.user_id %}

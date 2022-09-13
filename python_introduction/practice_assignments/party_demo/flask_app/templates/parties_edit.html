@@ -16,9 +16,9 @@
                 <a href="/welcome" class="btn btn-danger">Home</a>
             </div>
         </div>
-        {% for message in get_flashed_messages(category_filter=['reg']) %}
-                    <p class="text-danger">{{message}}</p>
-                {% endfor %}
+            {% for message in get_flashed_messages() %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
         <form action="/parties/{{party.id}}/update" method="post">
             <label for="what">What</label>
             <input type="text" name="what" id="what" class="form-control" value="{{party.what}}">
