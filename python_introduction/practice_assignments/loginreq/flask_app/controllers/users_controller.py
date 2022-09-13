@@ -48,4 +48,4 @@ def logout():
 def welcome():
     if 'user_id' not in session:
         return redirect('/')
-    return 'logged in,good stuff'
+    return 'logged in, lets get this started now'

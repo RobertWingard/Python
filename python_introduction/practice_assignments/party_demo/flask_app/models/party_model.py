@@ -51,11 +51,21 @@ class Party:
 
     @classmethod
     def get_by_id(cls,data):
-        query = "SELECT * FROm parties WHERE id = %(id)s;"
+        query = "SELECT * FROM parties JOIN users on users.id=parties.user_id WHERE parties.id = %(id)s;"
         results = connectToMySQL(DATABASE).query_db(query, data)
         if len(results) <1:
             return False
-        return cls(results[0])
+        row = results[0]
+        this_party = cls(row)
+        user_data = {
+            **row,
+            'id': row['users.id'],
+            'created_at' : row['users.created_at'],
+            'updated_at' : row['users.updated_at'],
+        }
+        planner = user_model.User(user_data)
+        this_party.planner = planner
+        return this_party
 
     @classmethod
     def update(cls,data):

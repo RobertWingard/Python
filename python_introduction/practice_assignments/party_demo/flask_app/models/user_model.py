@@ -1,6 +1,7 @@
 from flask_app.config.mysqpconnection import connectToMySQL
 from flask_app import DATABASE
 from flask import flash
+from flask_app.models import party_model
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
@@ -31,11 +32,26 @@ class User:
 
     @classmethod
     def get_by_id(cls,data):
-        query = "SELECT * FROM users WHERE id = %(id)s;"
+        query = "SELECT * FROM users LEFT JOIN parties on users.id = parties.user_id WHERE users.id = %(id)s;"
         results = connectToMySQL(DATABASE).query_db(query,data)
         if len(results) < 1:
             return False
-        return cls(results[0])
+    user = cls(results[0])
+    list_of_parties = []
+    for row in results:
+        if row['parties.id'] == None:
+            break
+        party_data = {
+            **row,
+            'id': row['parties.id'],
+            'created_at': row['parties.created_at'],
+            'updated_at': row['parties.updated_at']
+        }
+        this_party = party_model.Party(this_party)
+        list_of_parties.append(this_party)
+    user.parties = list_of_parties
+    return user
+
 
 
 

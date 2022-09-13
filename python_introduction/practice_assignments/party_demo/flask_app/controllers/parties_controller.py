@@ -22,8 +22,8 @@ def process_party():
         **request.form,
         'user_id': session['user_id']
     }
-    Party.create(data)
-    return redirect('/welcome')
+    id = Party.create(data)
+    return redirect(f'/parties/{id}')
 
 @app.route('/parties/<int:id>/delete')
 def del_party(id):
@@ -64,3 +64,15 @@ def update_party(id):
     }
     Party.update(data)
     return redirect('/welcome')
+
+
+@app.route('/parties/<int:id>')
+def show_party(id):
+    party = Party.get_by_id({'id':id})
+    return render_template('parties_one.html', party=party)
+
+
+@app.route('/my_parties')
+def my_parties():
+    user = User.get_by_id({'id': session['user_id']})
+    return render_template('my_parties.html', user=user)
