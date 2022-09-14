@@ -52,7 +52,7 @@ class User:
             }
             potential_user = User.get_by_email(data)
             if potential_user:
-                flash('email already registered')
+                flash('email already registered', 'reg')
                 is_valid = False
         if len(user_data['password']) < 8:
             flash('password must be at least 8 characters long.', 'reg')

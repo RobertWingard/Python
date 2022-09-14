@@ -33,7 +33,7 @@ def login():
         flash('invalid login info', 'log')
         return redirect('/')
     if not bcrypt.check_password_hash(user_in_db.password, request.form['password']):
-        flash('invaled login info', 'log')
+        flash('invalid login info', 'log')
         return redirect('/')
     session['user_id'] = user_in_db.id
     return redirect('/welcome')
