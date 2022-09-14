@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>sassy</title>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <h1>Edit this Sighting</h1>
+            <div>
+                
+                <a href="/dashboard" class="btn btn-danger">Dashboard</a>
+                <a href="/users/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+            {% for message in get_flashed_messages() %}
+            <p class="text-danger">{{message}}</p>
+            {% endfor %}
+        <form action="/sightings/{{sighting.id}}/update" method="post">
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" class="form-control" value="{{sighting.location}}">
+            <label for="amount">Number of Sassy seen</label>
+            <input type="number" name="amount" id="amount" class="form-control" value="{{sighting.amount}}">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" class="form-control" value="{{sighting.date}}">
+            <label for="description">What Happened?</label>
+            <div>
+            <textarea name="description" id="description" cols="30" rows="10">{{sighting.description}}</textarea>
+            </div>  <button class="btn btn-primary">Update Report</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
